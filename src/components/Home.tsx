@@ -1,7 +1,6 @@
 
 import { useState,useEffect } from "react";
 import { useGetAllFashionsQuery } from "../reducer/apiSlice";
-// import { useGetAllFashionsQuery } from "../redux/apiSlice"
 import Filter from "./Filter";
 
 import SingleCard from "./SingleCard";
@@ -16,7 +15,6 @@ export default function Home() {
         setFilterData(data)
       }, [isLoading])
 
-    console.log('data Home',data)
     if(isLoading)return <h2>Loading...</h2>
 
     if(error)return <>

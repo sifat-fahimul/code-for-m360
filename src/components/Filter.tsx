@@ -1,9 +1,7 @@
 import {useState} from 'react'
 import { Input } from 'antd';
 import { Select } from 'antd';
-import { DatePicker } from 'antd';
-import {useDispatch, useSelector} from 'react-redux'
-// import { getMonth, getWeek, getYear } from '../common/getDates';
+import {useDispatch} from 'react-redux';
 import { useGetAllFashionsQuery } from '../reducer/apiSlice';
 import { getMonth, getWeek, getYear } from '../common/getDates';
 
@@ -15,13 +13,7 @@ function Filter({setFilterData}:any) {
     const [launchStatus,setLaunchStatus]=useState(null)
     const [launchUpcoming,setLaunchUpcoming]=useState(null)
 
-    const {data,error,isLoading}=useGetAllFashionsQuery()
-    const ser=useSelector((state:any)=>state)
-
-    console.log('ser',ser)
-
-   
-
+    const {data}=useGetAllFashionsQuery()
 
     const dispatch:any=useDispatch()
 
@@ -72,11 +64,11 @@ function Filter({setFilterData}:any) {
 
   return (
     <div className='row mb-5'>
-         <div className="col-lg-3 col-md-3 col-10">
+         <div className="col-lg-3 col-md-5 col-10">
                 <p>Search</p>
                 <Input onChange={(e)=>search(e.target.value)} placeholder="Search By Rocket Name" />
         </div>
-        <div className="col-lg-3 col-md-3 col-10">
+        <div className="col-lg-3 col-md-5 col-10">
         <p>Filter By Launch Date</p>
         <Select
         className='w-100'
@@ -91,7 +83,7 @@ function Filter({setFilterData}:any) {
     }
     options={[
         {
-            value: null,
+            value: '',
             label: 'NONE',
           },
       {
@@ -109,7 +101,7 @@ function Filter({setFilterData}:any) {
     ]}
   />
     </div>
-    <div className="col-lg-3 col-md-3 col-10">
+    <div className="col-lg-3 col-md-5 col-10">
         <p>Filter By Launch Status</p>
         <Select
         className='w-100'
@@ -135,7 +127,7 @@ function Filter({setFilterData}:any) {
     ]}
   />
     </div>
-    <div className="col-lg-3 col-md-3 col-10">
+    <div className="col-lg-3 col-md-5 col-10">
         <p>Filter By Upcoming</p>
         <Select
         className='w-100'

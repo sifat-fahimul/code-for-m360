@@ -12,8 +12,7 @@ const SingleCard = ({cardData} : any) => {
     cover={
       <img
         alt="example"
-        src={cardData?.links?.mission_patch
-        }
+        src={cardData?.links?.mission_patch}
       />
     }
   >

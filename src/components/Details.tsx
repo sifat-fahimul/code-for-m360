@@ -22,7 +22,7 @@ const id =useParams()
        <div>
        <Card
             hoverable
-            cover={<img className='w-25 mt-2' alt="mission_patch" src={data.links?.mission_patch} />}
+            cover={<img className='w-25 mt-2' alt="mission_patch" src={data?.links?.mission_patch} />}
             style={{width:500}}
          >
             <h2>Flight Number : {data?.flight_number}</h2>
@@ -38,7 +38,7 @@ const id =useParams()
     <hr />
           <Meta
       className='mt-2'
-      title={'Launch Date : '+data?.launch_date_local.split('T')[0]}
+      title={'Launch Date : '+data?.launch_date_local?.split('T')[0]}
     />
      </Card>
        </div>

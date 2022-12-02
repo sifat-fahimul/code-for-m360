@@ -1,10 +1,14 @@
-import {configureStore} from '@reduxjs/toolkit'
+import {configureStore} from '@reduxjs/toolkit';
 
-import addReducer from '../reducer/addSlice'
+import addReducer from '../reducer/addSlice';
+import { getApiData } from '../reducer/apiSlice';
+// import  getApiData from '../reducer/apiSlice';
 
 const store=configureStore({
     reducer:{
-        added:addReducer
+        added:addReducer,
+        data:getApiData,
+    
     }
 })
 
